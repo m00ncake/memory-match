@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match v0.1</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+    <header class="header-container">
+        <div class="game-logo">
+            <div class="game-title">memory match</div>
+            <div class="settings"><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></div>
+            <div class="about"><a href="#"><span class="glyphicon glyphicon-info-sign"></span> About</a></div>
+        </div>
+    </header>
+    <section class="stats-container">
+        <div>
+            <div class="matched">
+                <div class="name">Matched Pairs:</div>
+                <div class="value">0</div>
+            </div>
+        </div>
+        <div>
+            <div class="attemps">
+                <div class="name">Attemps:</div>
+                <div class="value">0</div>
+            </div>
+        </div>
+        <div>
+            <div class="accuracy">
+                <div class="name">Accuracy:</div>
+                <div class="value">0%</div>
+            </div>
+        </div>
+        <button class="btn btn-primary reset">Reset Game</button>
+    </section>
+    <section class="game-container">
+        <div id="game-area">
+            <div class="card">
+                <div class="front" id="beast01"><img src="images/front_beastboy.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front" id="raven01"><img src="images/front_raven.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front" id="beast02"><img src="images/front_beastboy.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front" id="raven02"><img src="images/front_raven.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_wow.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_group.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_cyborg.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_robin.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_rainbow.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_wow.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_robin.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_starfire.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_cyborg.png"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_collage.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_rainbow.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_starfire.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_group.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/front_collage.jpg"></div>
+                <div class="back"><img src="images/card_background_09.jpg"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
