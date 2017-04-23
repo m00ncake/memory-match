@@ -1,0 +1,97 @@
+/********** MEMORY MATCH V0.5 ***********/
+
+body {
+    background-image: url(images/body_background_04.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.header-container {
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    background-color: white;
+    background-image: url(images/teen.titan.logo.png);
+    background-repeat: no-repeat;
+    background-size: 25%;
+}
+.game-title, .settings, .about {
+    position: absolute;
+    font-family: Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: black;
+}
+.game-title {
+    left: 23vw;
+    top: 2.9vh;
+    font-size: 10vmin;
+    text-align: center;
+    width: 60%;
+    font-weight: 900;
+}
+.settings {
+    right: 7vw;
+    top: 11vh;
+    font-size: 2vmin;
+}
+.about {
+    right: 7vw;
+    top: 6vh;
+    font-size: 2vmin;
+}
+.game-logo a {
+    text-decoration: none;
+    color: black;
+}
+.stats-container {
+    float: left;
+    position: relative;
+    background-color: transparent;
+    width: 15vw;
+    height: 70vh;
+    margin: 3vw;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    color: white;
+}
+.name {
+    width: 100%;
+    font-size: 4vmin;
+    text-align: center;
+    padding: 20px 0 10px 0;
+}
+.value {
+    text-align: center;
+    font-size: 3vmin;
+}
+.btn.btn-primary.reset {
+    position: absolute;
+    bottom: 20px;
+    width: 90%;
+    margin: 20px 0.7vw;
+    padding: 1vh 1vw;
+    font-size: 2vmin;
+}
+.game-container {
+    float: left;
+    position: relative;
+    margin: 1vw 3vw;
+    width: 60vw;
+    height: 79vh;
+}
+.card {
+    position: relative;
+    display: inline-block;
+    background-color: black;
+    height: 25vh;
+    width: 9vw;
+    margin: 3px;
+}
+.back img, .front img {
+    position: absolute;
+    height: 23vh;
+    width: 8vw;
+    left: 1vh;
+    right: 1vh;
+    top: 1vh;
+    bottom: 1vh;
+}
