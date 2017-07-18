@@ -7,12 +7,12 @@ body {
 }
 .header-container {
     position: relative;
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
+    height: 12em;
     background-color: white;
     background-image: url(images/teen.titan.logo.png);
     background-repeat: no-repeat;
-    background-size: 25%;
+    background-size: 21%;
 }
 .game-title, .settings, .about {
     position: absolute;
@@ -21,22 +21,22 @@ body {
     color: black;
 }
 .game-title {
-    left: 23vw;
-    top: 2.9vh;
-    font-size: 10vmin;
+    left: 22vw;
+    top: 0.8vh;
+    font-size: 5.5vw;
     text-align: center;
     width: 60%;
     font-weight: 900;
 }
 .settings {
     right: 7vw;
-    top: 11vh;
-    font-size: 2vmin;
+    top: 8vh;
+    font-size: 1vw;
 }
 .about {
     right: 7vw;
-    top: 6vh;
-    font-size: 2vmin;
+    top: 4vh;
+    font-size: 1vw;
 }
 .game-logo a {
     text-decoration: none;
@@ -60,6 +60,7 @@ body {
     padding: 20px 0 10px 0;
 }
 .value {
+    width: 100%;
     text-align: center;
     font-size: 3vmin;
 }
@@ -94,4 +95,226 @@ body {
     right: 1vh;
     top: 1vh;
     bottom: 1vh;
+}
+@media screen and (max-width: 1600px) {
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+    .header-container {
+        height: 8em;
+        background-size: 21%;
+    }
+    .settings {
+        right: 6vw;
+        top: 6vw;
+        font-size: 1vw;
+    }
+    .about {
+        right: 6vw;
+        top: 3vw;
+        font-size: 1vw;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .header-container {
+        height: 7em;
+        background-size: 22%;
+    }
+    .settings {
+        top: 6vw;
+        font-size: 1vw;
+    }
+    .about {
+        top: 3vw;
+        font-size: 1vw;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .header-container {
+        height: 6em;
+        background-size: 22%;
+    }
+    .settings {
+        right: 5vw;
+        top: 4.5vw;
+        font-size: 1.2vw;
+    }
+    .about {
+        right: 5vw;
+        top: 2.5vw;
+        font-size: 1.2vw;
+    }
+    .stats-container {
+        width: 12vw;
+    }
+    .game-container {
+        float: left;
+        position: relative;
+        margin: 5vw 3vw;
+        width: 70vw;
+        height: 63vh;
+    }
+    .card {
+        position: relative;
+        display: inline-block;
+        background-color: black;
+        height: 21vh;
+        width: 11vw;
+        margin: 0;
+    }
+    .back img, .front img {
+        position: absolute;
+        height: 20vh;
+        width: 10vw;
+        left: 0.7vh;
+        right: 0.5vh;
+        top: 0.5vh;
+        bottom: 1vh;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-container {
+        height: 5.5em;
+        background-size: 22%;
+    }
+    .settings {
+        top: 6vw;
+        font-size: 1vw;
+    }
+    .about {
+        top: 3.5vw;
+        font-size: 1vw;
+    }
+    .card {
+        margin: 1.5px;
+    }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: portrait) {
+    .header-container {
+        height: 5em;
+        background-size: 22%;
+    }
+    .settings {
+        right: 5vw;
+        top: 4.5vw;
+        font-size: 1.2vw;
+    }
+    .about {
+        right: 5vw;
+        top: 2.5vw;
+        font-size: 1.2vw;
+    }
+
+    .btn.btn-primary.reset {
+        position: relative;
+        display: block;
+        width: 45%;
+        margin: 0 auto;
+    }
+
+    .card {
+        height: 21vw;
+        width: 15vw;
+        margin: 0;
+    }
+    .back img, .front img {
+        height: 20vw;
+        width: 14vw;
+        left: 0.5vw;
+        right: 0.7vw;
+        top: 0.5vw;
+        bottom: 0.5vw;
+    }
+    .stats-container {
+        height: 18vh;
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+    .stats-container div {
+        display: inline-block;
+        margin: 7px;
+    }
+    .game-container {
+        margin-top: 8vw;
+        height: 91vh;
+        width: 95vw;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .header-container {
+        height: 4em;
+        background-size: 22%;
+    }
+    .settings {
+        right: 5vw;
+        top: 4.5vw;
+        font-size: 1.2vw;
+    }
+    .about {
+        right: 5vw;
+        top: 2.5vw;
+        font-size: 1.2vw;
+    }
+    .card {
+        height: 14vw;
+        width: 10vw;
+        margin: 0.8px;
+    }
+    .back img, .front img {
+        height: 13vw;
+        width: 9vw;
+        left: 0.5vw;
+        right: 0.7vw;
+        top: 0.5vw;
+        bottom: 0.5vw;
+    }
+    .game-container {
+        margin-top: 1vw;
+        height: 93vh;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-color: purple;
+    }
+    .header-container {
+        height: 3em;
+        background-size: 25%;
+    }
+    .settings {
+        top: 5.5vw;
+        font-size: 1.5vw;
+    }
+    .about {
+        top: 1.8vw;
+        font-size: 1.5vw;
+    }
+    .card {
+        margin: 0.5px;
+        height: 25vw;
+        width: 18vw;
+    }
+    .back img, .front img {
+        height: 24vw;
+        width: 17vw;
+        left: 0.7vw;
+        right: 0.5vw;
+        top: 0.5vw;
+        bottom: 0.5vw;
+    }
+    .game-container {
+        height: 93vh;
+    }
 }
