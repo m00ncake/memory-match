@@ -4,6 +4,7 @@ body {
     background-image: url(images/body_background_04.png);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center top;
 }
 .header-container {
     position: relative;
@@ -83,24 +84,20 @@ body {
     position: relative;
     display: inline-block;
     background-color: black;
-    height: 25vh;
+    height: 13vw;
     width: 9vw;
     margin: 3px;
 }
 .back img, .front img {
     position: absolute;
-    height: 23vh;
+    height: 12vw;
     width: 8vw;
-    left: 1vh;
-    right: 1vh;
-    top: 1vh;
-    bottom: 1vh;
+    left: 0.5vw;
+    right: 0.5vw;
+    top: 0.5vw;
+    bottom: 0.5vw;
 }
-@media screen and (max-width: 1600px) {
-    body {
-        background-size: cover;
-        background-position: center;
-    }
+@media screen and (max-width: 1680px) {
     .header-container {
         height: 8em;
         background-size: 21%;
@@ -114,6 +111,31 @@ body {
         right: 6vw;
         top: 3vw;
         font-size: 1vw;
+    }
+    .stats-container {
+        width: 15vw;
+        height: 45vw;
+    }
+    .btn.btn-primary.reset {
+        padding: 0.2vh 0.5vw;
+    }
+    .game-container {
+        margin: 2vw 3vw;
+        width: 66vw;
+        height: 45vw;
+    }
+    .card {
+        height: 14vw;
+        width: 10vw;
+        margin: 0;
+    }
+    .back img, .front img {
+        height: 13vw;
+        width: 9vw;
+        left: 0.7vh;
+        right: 0.5vh;
+        top: 0.5vh;
+        bottom: 0.5vh;
     }
 }
 
@@ -129,6 +151,34 @@ body {
     .about {
         top: 3vw;
         font-size: 1vw;
+    }
+    .stats-container {
+        width: 14vw;
+        font-wight: 400;
+    }
+    .stats-container div {
+        font-size: 2.5vmin;
+    }
+    .btn.btn-primary.reset {
+        font-size: 1.5vmin;
+    }
+    .game-container {
+        margin: 1vw 3vw;
+        width: 66vw;
+        height: 45vw;
+    }
+    .card {
+        height: 14vw;
+        width: 10vw;
+        margin: 0;
+    }
+    .back img, .front img {
+        height: 13vw;
+        width: 9vw;
+        left: 0.7vh;
+        right: 0.5vh;
+        top: 0.5vh;
+        bottom: 0.5vh;
     }
 
 }
@@ -152,28 +202,22 @@ body {
         width: 12vw;
     }
     .game-container {
-        float: left;
-        position: relative;
-        margin: 5vw 3vw;
-        width: 70vw;
-        height: 63vh;
+        margin: 1vw 3vw;
+        width: 66vw;
+        height: 45vw;
     }
     .card {
-        position: relative;
-        display: inline-block;
-        background-color: black;
-        height: 21vh;
-        width: 11vw;
+        height: 14vw;
+        width: 10vw;
         margin: 0;
     }
     .back img, .front img {
-        position: absolute;
-        height: 20vh;
-        width: 10vw;
-        left: 0.7vh;
+        height: 13vw;
+        width: 9vw;
+        left: 0.5vh;
         right: 0.5vh;
         top: 0.5vh;
-        bottom: 1vh;
+        bottom: 0.5vh;
     }
 }
 
@@ -194,14 +238,90 @@ body {
         margin: 1.5px;
     }
 }
+/***********************************/
+/*************  iPads  *************/
+/***********************************/
 
 @media only screen
 and (min-device-width: 768px)
 and (max-device-width: 1024px)
 and (orientation: portrait) {
+    body {
+        background-size: cover;
+    }
     .header-container {
-        height: 5em;
-        background-size: 22%;
+        height: 10em;
+        background-size: 25%;
+        background-position: left;
+    }
+    .game-title {
+        top: 3.8vh;
+    }
+    .settings {
+        top: 8vh;
+        font-size: 2vw;
+    }
+    .about {
+        top: 4vh;
+        font-size: 2vw;
+    }
+    .stats-container {
+        width: 94%;
+        height: 23vw;
+    }
+    .stats-container div {
+        display: inline-block;
+        margin: 0 12px;
+    }
+    .value {
+        width: 100%;
+        text-align: center;
+        font-size: 3vmin;
+    }
+    .btn.btn-primary.reset {
+        position: relative;
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+        margin-top: 40px;
+        padding: 1vh 1vw;
+        font-size: 2vmin;
+    }
+    .game-container {
+        float: left;
+        position: relative;
+        margin: 1vw 3vw;
+        padding-left: 5px;
+        width: 94vw;
+        height: 79vh;
+    }
+    .card {
+        height: 19vw;
+        width: 14vw;
+        margin: 3px;
+    }
+    .back img, .front img {
+        height: 17vw;
+        width: 12vw;
+        left: 1vw;
+        right: 1vw;
+        top: 1vw;
+        bottom: 1vw;
+    }
+
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape) {
+    body {
+        background-size: 108% 105%;
+        background-position: center;
+    }
+    .header-container {
+        height: 7em;
+        background-size: 23%;
     }
     .settings {
         right: 5vw;
@@ -213,43 +333,36 @@ and (orientation: portrait) {
         top: 2.5vw;
         font-size: 1.2vw;
     }
-
-    .btn.btn-primary.reset {
-        position: relative;
-        display: block;
-        width: 45%;
-        margin: 0 auto;
+    .stats-container {
+        width: 12vw;
     }
-
+    .game-container {
+        float: left;
+        position: relative;
+        margin: 6vw 2vw;
+        width: 68vw;
+        height: 47vw;
+    }
     .card {
-        height: 21vw;
-        width: 15vw;
+        position: relative;
+        display: inline-block;
+        background-color: black;
+        height: 15vw;
+        width: 11vw;
         margin: 0;
     }
     .back img, .front img {
-        height: 20vw;
-        width: 14vw;
-        left: 0.5vw;
-        right: 0.7vw;
-        top: 0.5vw;
-        bottom: 0.5vw;
-    }
-    .stats-container {
-        height: 18vh;
-        width: 100%;
-        display: block;
-        margin: 0;
-    }
-    .stats-container div {
-        display: inline-block;
-        margin: 7px;
-    }
-    .game-container {
-        margin-top: 8vw;
-        height: 91vh;
-        width: 95vw;
+        position: absolute;
+        height: 14vw;
+        width: 10vw;
+        left: 0.7vh;
+        right: 0.5vh;
+        top: 0.6vh;
+        bottom: 1vh;
     }
 }
+
+
 
 @media screen and (max-width: 736px) {
     .header-container {
@@ -266,6 +379,18 @@ and (orientation: portrait) {
         top: 2.5vw;
         font-size: 1.2vw;
     }
+    .stats-container div{
+        font-size: 2.1vmin;
+    }
+    .btn.btn-primary.reset {
+        font-size: 1.8vmin;
+        bottom: 10px;
+    }
+
+    .game-container {
+        margin-top: 1vw;
+        height: 50vw;
+    }
     .card {
         height: 14vw;
         width: 10vw;
@@ -279,15 +404,11 @@ and (orientation: portrait) {
         top: 0.5vw;
         bottom: 0.5vw;
     }
-    .game-container {
-        margin-top: 1vw;
-        height: 93vh;
-    }
 }
 
 @media (max-width: 480px) {
     body {
-        background-color: purple;
+        background-size: cover;
     }
     .header-container {
         height: 3em;
@@ -301,6 +422,21 @@ and (orientation: portrait) {
         top: 1.8vw;
         font-size: 1.5vw;
     }
+
+    .stats-container {
+        width: 20vw;
+        height: 70vw;
+    }
+    .stats-container div {
+        font-size: 2.5vmin;
+    }
+    .btn.btn-primary.reset {
+        font-size: 2.5vmin;
+    }
+    .game-container {
+        height: 94vh;
+        margin-top: 0.5vw;
+    }
     .card {
         margin: 0.5px;
         height: 25vw;
@@ -313,8 +449,5 @@ and (orientation: portrait) {
         right: 0.5vw;
         top: 0.5vw;
         bottom: 0.5vw;
-    }
-    .game-container {
-        height: 93vh;
     }
 }
