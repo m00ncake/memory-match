@@ -1,6 +1,4 @@
-/**
- * Created by JTM on 4/23/17.
- */
+/***********************/
 var first_card = null;
 var first_card_front = null;
 var first_card_back = null;
