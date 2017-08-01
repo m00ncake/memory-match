@@ -1,6 +1,4 @@
-/**
- * Created by JTM on 4/23/17.
- */
+/***********************/
 var first_card = null;
 var first_card_front = null;
 var first_card_back = null;
@@ -14,6 +12,15 @@ var attempt_counter = 0;
 var accuracy = 0;
 var games_played = 0;
 var canIClick = true;
+
+function randomize(){
+    var divArray = $('.card').toArray();
+    while(divArray.length > 0){
+        var randomOrder = Math.floor(Math.random() * divArray.length);
+        var takeElement = divArray.splice(randomOrder, 1);
+        $('#game-area').append(takeElement[0]);
+    }
+}
 
 function make_unavailable(clickedCard) {
     matched_cards.push(clickedCard);
@@ -110,4 +117,7 @@ function card_clicked() {
 $(document).ready(function() {
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
+
 });
+
+
