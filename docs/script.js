@@ -1,4 +1,4 @@
-/***********************/
+
 var first_card = null;
 var first_card_front = null;
 var first_card_back = null;
@@ -12,14 +12,58 @@ var attempt_counter = 0;
 var accuracy = 0;
 var games_played = 0;
 var canIClick = true;
+var cardBackArr = ["card_background_09.jpg"];
+var cardFrontArr = [
+    "front_collage.jpg",
+    "front_robin.png",
+    "front_starfire.jpg",
+    "front_rainbow.jpg",
+    "front_wow.jpg",
+    "front_group.jpg",
+    "front_robin.png",
+    "front_group.jpg",
+    "front_wow.jpg",
+    "front_collage.jpg",
+    "front_beastboy.png",
+    "front_raven.png",
+    "front_cyborg.png",
+    "front_raven.png",
+    "front_rainbow.jpg",
+    "front_starfire.jpg",
+    "front_cyborg.png",
+    "front_beastboy.png"
+    ];
 
-function randomize(){
-    var divArray = $('.card').toArray();
-    while(divArray.length > 0){
-        var randomOrder = Math.floor(Math.random() * divArray.length);
-        var takeElement = divArray.splice(randomOrder, 1);
-        $('#game-area').append(takeElement[0]);
+function build_cards(){
+    var tempCardFrontArr = cardFrontArr.slice();
+    while(tempCardFrontArr.length > 0){
+        var randomOrder = Math.floor(Math.random() * tempCardFrontArr.length);
+        console.log(randomOrder);
+        var takeElement = tempCardFrontArr.splice(randomOrder, 1);
+        // var takeElement = tempCardFrontArr.slice(randomOrder, (randomOrder + 1))
+        console.log(takeElement[0]);
+        var $card = $("<div>", {
+            class: "card"
+        });
+        var $front = $("<div>", {
+            class: "front",
+        });
+        var $back = $("<div>", {
+            class: "back",
+        });
+        var $frontimg = $("<img>", {
+            src: "images/" + takeElement[0]
+        }); 
+        console.log(($frontimg).attr("src"));
+        var $backimg = $("<img>", {
+            src: "images/card_background_09.jpg"
+        });
+        $front.append($frontimg);
+        $back.append($backimg);
+        $card.append($front).append($back);
+        $("#game-area").append($card); 
     }
+
 }
 
 function make_unavailable(clickedCard) {
@@ -51,8 +95,12 @@ function reset_stats () {
     $(".accuracy").find(".value").text(accuracy + "%");
 }
 
+function remove_game_area() {
+    $("#game-area").empty();
+}
+
 function reset_button_clicked() {
-    //return all cards to original state
+    //return all cards to original state then randomizes cards
     reset_stats();
     $(".card").find(".back").show();
     $(".card").off("click");
@@ -64,6 +112,9 @@ function reset_button_clicked() {
     first_card_back = null;
     second_card_front = null;
     second_card_back = null;
+    remove_game_area();
+    build_cards();
+    $(".card").click(card_clicked);    
 }
 
 function flip_card() {
@@ -74,7 +125,12 @@ function flip_card() {
     canIClick = true;
 }
 
+function alert_win() {
+    alert("You have WON~!!");    
+}
+
 function card_clicked() {
+    console.log("clicked");
     if (canIClick === false) {
         return;
     }
@@ -102,12 +158,12 @@ function card_clicked() {
             second_card_back = null;
 
             if (match_counter === total_possible_matches) {
-                alert("You have WON~!!");
+                setTimeout(alert_win, 700);
             }
 
         } else {
             canIClick = false;
-            setTimeout(flip_card, 2000);
+            setTimeout(flip_card, 1200);
 
         }
         accuracyCounter();
@@ -115,9 +171,9 @@ function card_clicked() {
 }
 
 $(document).ready(function() {
+    build_cards();
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
-
 });
 
 
