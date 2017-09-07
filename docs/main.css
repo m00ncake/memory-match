@@ -66,12 +66,15 @@ body {
     text-align: center;
     font-size: 3vmin;
 }
-.btn.btn-primary.reset {
+.reset {
     position: absolute;
-    bottom: 20px;
-    width: 90%;
-    margin: 20px 0.7vw;
-    padding: 1vh 1vw;
+    background-color: #83cd3a;
+    border: 2px solid black;
+    bottom: 10%;
+    width: 79%;
+    height: 8%;
+    left: 10%;
+    padding: 1vw 1vw;
     font-size: 2vmin;
 }
 .game-container {
@@ -117,8 +120,8 @@ body {
         width: 15vw;
         height: 45vw;
     }
-    .btn.btn-primary.reset {
-        padding: 0.2vh 0.5vw;
+    .reset {
+        padding: 0.5vw 0.5vw;
     }
     .game-container {
         margin: 2vw 3vw;
@@ -146,11 +149,11 @@ body {
         background-size: 22%;
     }
     .settings {
-        top: 6vw;
+        top: 5vw;
         font-size: 1vw;
     }
     .about {
-        top: 3vw;
+        top: 2vw;
         font-size: 1vw;
     }
     .stats-container {
@@ -160,10 +163,10 @@ body {
         font-wight: 400;
     }
     .stats-container div {
-        font-size: 2.5vmin;
+        font-size: 2.4vmin;
     }
-    .btn.btn-primary.reset {
-        font-size: 1.5vmin;
+    .reset {
+        font-size: 2vmin;
     }
     .game-container {
         margin: 1vw 3vw;
@@ -175,10 +178,8 @@ body {
         width: 10vw;
     }
     .back img, .front img {
-        height: 13vw;
-        width: 9vw;
-        left: 0.9vh;
-        top: 1vh;
+        top: 0.5vw;
+        left: 0.5vw;
     }
 
 }
@@ -201,6 +202,12 @@ body {
     .stats-container {
         width: 12vw;
     }
+    .stats-container div {
+        font-size: 2vmin;
+    }
+    .reset {
+        font-size: 1.6vmin;
+    }
     .game-container {
         margin: 1vw 3vw;
         width: 66vw;
@@ -209,19 +216,19 @@ body {
     .card {
         height: 14vw;
         width: 10vw;
-        margin: 0;
+        margin: 1px;
     }
     .back img, .front img {
-        height: 13vw;
-        width: 9vw;
-        left: 0.5vh;
-        right: 0.5vh;
-        top: 0.5vh;
-        bottom: 0.5vh;
+        left: 0.45vw;
+        top: 0.45vw;
     }
 }
 
 @media screen and (max-width: 992px) {
+    body {
+        font-size: 16px;
+        line-height: 0.8;
+    }
     .header-container {
         height: 5.5em;
         background-size: 22%;
@@ -233,6 +240,18 @@ body {
     .about {
         top: 3.5vw;
         font-size: 1vw;
+    }
+    .stats-container div {
+        font-size: 1.75vmin;
+    }
+    .game-title {
+        top: 3vw;
+    }
+    .reset {
+        font-size: 1.4vmin;
+        bottom: 2vw;
+        width: 83%;
+        left: 8%;
     }
     .card {
         margin: 1.5px;
@@ -278,7 +297,7 @@ and (orientation: portrait) {
         text-align: center;
         font-size: 3vmin;
     }
-    .btn.btn-primary.reset {
+    .reset {
         position: relative;
         display: block;
         width: 60%;
@@ -298,7 +317,7 @@ and (orientation: portrait) {
     .card {
         height: 19vw;
         width: 14vw;
-        margin: 3px;
+        margin: 1px;
     }
     .back img, .front img {
         height: 17vw;
@@ -365,9 +384,16 @@ and (orientation: landscape) {
 
 
 @media screen and (max-width: 736px) {
+    body {
+        font-size: 16px;
+        line-height: 0.5;
+    }
     .header-container {
         height: 4em;
         background-size: 22%;
+    }
+    .game-title {
+        top: 4vw;
     }
     .settings {
         right: 5vw;
@@ -380,11 +406,13 @@ and (orientation: landscape) {
         font-size: 1.2vw;
     }
     .stats-container div{
-        font-size: 2.1vmin;
+        font-size: 1.5vmin;
     }
-    .btn.btn-primary.reset {
-        font-size: 1.8vmin;
-        bottom: 10px;
+    .reset {
+        font-size: 1.3vmin;
+        width: 89%;
+        bottom: 8px;
+        left: 5%;
     }
 
     .game-container {
@@ -395,14 +423,6 @@ and (orientation: landscape) {
         height: 14vw;
         width: 10vw;
         margin: 0.8px;
-    }
-    .back img, .front img {
-        height: 13vw;
-        width: 9vw;
-        left: 0.5vw;
-        right: 0.7vw;
-        top: 0.5vw;
-        bottom: 0.5vw;
     }
 }
 
@@ -430,7 +450,7 @@ and (orientation: landscape) {
     .stats-container div {
         font-size: 2.5vmin;
     }
-    .btn.btn-primary.reset {
+    .reset {
         font-size: 2.5vmin;
     }
     .game-container {
