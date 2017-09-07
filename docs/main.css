@@ -46,13 +46,14 @@ body {
 .stats-container {
     float: left;
     position: relative;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.80);
+    border: 3px solid black;
     width: 15vw;
     height: 70vh;
     margin: 3vw;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 900;
-    color: white;
+    color: black;
 }
 .name {
     width: 100%;
@@ -127,7 +128,7 @@ body {
     .card {
         height: 14vw;
         width: 10vw;
-        margin: 0;
+        margin: 1px;
     }
     .back img, .front img {
         height: 13vw;
@@ -154,6 +155,8 @@ body {
     }
     .stats-container {
         width: 14vw;
+        height: 37vw;
+        left: 18px;
         font-wight: 400;
     }
     .stats-container div {
@@ -164,21 +167,18 @@ body {
     }
     .game-container {
         margin: 1vw 3vw;
-        width: 66vw;
-        height: 45vw;
+        width: 64vw;
+        height: 40vw;
     }
     .card {
         height: 14vw;
         width: 10vw;
-        margin: 0;
     }
     .back img, .front img {
         height: 13vw;
         width: 9vw;
-        left: 0.7vh;
-        right: 0.5vh;
-        top: 0.5vh;
-        bottom: 0.5vh;
+        left: 0.9vh;
+        top: 1vh;
     }
 
 }

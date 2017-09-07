@@ -38,10 +38,7 @@ function build_cards(){
     var tempCardFrontArr = cardFrontArr.slice();
     while(tempCardFrontArr.length > 0){
         var randomOrder = Math.floor(Math.random() * tempCardFrontArr.length);
-        console.log(randomOrder);
         var takeElement = tempCardFrontArr.splice(randomOrder, 1);
-        // var takeElement = tempCardFrontArr.slice(randomOrder, (randomOrder + 1))
-        console.log(takeElement[0]);
         var $card = $("<div>", {
             class: "card"
         });
