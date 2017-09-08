@@ -168,6 +168,7 @@ function card_clicked() {
 }
 
 $(document).ready(function() {
+    // $(".win").hide();
     build_cards();
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
