@@ -123,7 +123,13 @@ function flip_card() {
 }
 
 function alert_win() {
-    alert("You have WON~!!");    
+    $(".win-modal-bg").toggle();
+    $(".close-win-modal").click(function(){
+        $(".win-modal-bg").toggle();
+        reset_button_clicked();
+    });
+
+    // alert("You have WON~!!");    
 }
 
 function card_clicked() {
@@ -155,7 +161,7 @@ function card_clicked() {
             second_card_back = null;
 
             if (match_counter === total_possible_matches) {
-                setTimeout(alert_win, 700);
+                setTimeout(alert_win, 500);
             }
 
         } else {
@@ -168,7 +174,7 @@ function card_clicked() {
 }
 
 $(document).ready(function() {
-    // $(".win").hide();
+    // $(".win-modal-bg").hide();
     build_cards();
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
