@@ -98,6 +98,9 @@ body {
     height: 13vw;
     width: 9vw;
     margin: 3px;
+    -webkit-animation-duration: 1.5s;
+}
+.card.animated.pulse {
     -webkit-animation-duration: 0.2s;
 }
 .back img, .front img {
