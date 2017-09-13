@@ -16,24 +16,24 @@ var attempt_counter = 0;
 var accuracy = 0;
 var games_played = 0;
 var canIClick = true;
-var cardBackArr = ["card_background_09.jpg"];
+var cardBackArr = ["card_background.png"];
 var cardFrontArr = [
-    "front_collage.jpg",
+    "front_collage.png",
     "front_robin.png",
-    "front_starfire.jpg",
-    "front_rainbow.jpg",
-    "front_wow.jpg",
-    "front_group.jpg",
+    "front_starfire.png",
+    "front_rainbow.png",
+    "front_wow.png",
+    "front_group.png",
     "front_robin.png",
-    "front_group.jpg",
-    "front_wow.jpg",
-    "front_collage.jpg",
+    "front_group.png",
+    "front_wow.png",
+    "front_collage.png",
     "front_beastboy.png",
     "front_raven.png",
     "front_cyborg.png",
     "front_raven.png",
-    "front_rainbow.jpg",
-    "front_starfire.jpg",
+    "front_rainbow.png",
+    "front_starfire.png",
     "front_cyborg.png",
     "front_beastboy.png"
     ];
@@ -57,7 +57,7 @@ function build_cards(){
         }); 
         console.log(($frontimg).attr("src"));
         var $backimg = $("<img>", {
-            src: "images/card_background_09.jpg"
+            src: "images/card_background.png"
         });
         $front.append($frontimg);
         $back.append($backimg);
