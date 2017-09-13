@@ -136,7 +136,6 @@ function alert_win() {
 
 
 function card_clicked() {
-    console.log("clicked");
     $(".card").removeClass("animated flipInY");
     $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
         $(this).removeClass(cardClickAnimation);
