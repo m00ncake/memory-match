@@ -1,10 +1,14 @@
 
+var previousClick;
 var first_card = null;
 var first_card_front = null;
 var first_card_back = null;
 var second_card = null;
 var second_card_front = null;
 var second_card_back = null;
+var suggestAnimation = "animated shake";
+var cardClickAnimation = "animated pulse";
+var onAnimationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 var matched_cards = [];
 var total_possible_matches = 9;
 var match_counter = 0;
@@ -40,7 +44,7 @@ function build_cards(){
         var randomOrder = Math.floor(Math.random() * tempCardFrontArr.length);
         var takeElement = tempCardFrontArr.splice(randomOrder, 1);
         var $card = $("<div>", {
-            class: "card"
+            class: "card animated flipInY",
         });
         var $front = $("<div>", {
             class: "front",
@@ -125,20 +129,30 @@ function flip_card() {
 function alert_win() {
     $(".win-modal-bg").toggle();
     $(".close-win-modal").click(function(){
-        $(".win-modal-bg").toggle();
+        $(".win-modal-bg").hide();
         reset_button_clicked();
     });
-
-    // alert("You have WON~!!");    
 }
+
 
 function card_clicked() {
     console.log("clicked");
+    $(".card").removeClass("animated flipInY");
+    $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
+        $(this).removeClass(cardClickAnimation);
+    });
     if (canIClick === false) {
+        return;
+    }
+    if (this == previousClick) {
+        $(".suggest").addClass(suggestAnimation).one(onAnimationEnd, function(){
+            $(".suggest").removeClass(suggestAnimation);
+        }).show();
         return;
     }
     $(this).find(".back").hide();
     if (first_card_front === null) {
+        previousClick = this;
         first_card = $(this);
         first_card_back = $(this).find(".back");
         first_card_front = $(this).find(".front");
@@ -148,6 +162,8 @@ function card_clicked() {
         second_card_back = $(this).find(".back");
         second_card_front = $(this).find(".front");
         second_card.addClass("clicked");
+        $(".suggest").hide();
+        previousClick = null;
         attemptCounter();
         if (first_card_front[0] === second_card_front[0]) {
             setTimeout(flip_card, 1000);

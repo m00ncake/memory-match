@@ -5,6 +5,7 @@
     <title>Memory Match v1.0</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="main.css">    
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="script.js"></script>
@@ -36,6 +37,11 @@
                 <div class="value">0%</div>
             </div>
         </div>
+        <div>
+            <div class="suggest">
+                <div class="name">click another card</div>
+            </div>
+        </div>
         <button class="reset">Reset Game</button>
     </section>
     <section class="game-container">
@@ -47,7 +53,7 @@
         </div>
     </section>
     <section class="win-modal-bg">
-        <div class="win-modal">
+        <div class="win-modal animated bounce">
             <span class="close-win-modal">&times;</span>
             <p class="win-content">You've Found All the Titans~!!</p>
         </div>

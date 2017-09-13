@@ -66,6 +66,13 @@ body {
     text-align: center;
     font-size: 3vmin;
 }
+.suggest {
+    display: none;
+    color: #ee3e2b;
+    /* -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black; */
+    -webkit-animation-duration: 0.4s;
+}
 .reset {
     position: absolute;
     background-color: #83cd3a;
@@ -91,6 +98,7 @@ body {
     height: 13vw;
     width: 9vw;
     margin: 3px;
+    -webkit-animation-duration: 0.2s;
 }
 .back img, .front img {
     position: absolute;
@@ -112,7 +120,7 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.44);
 }
-.win-modal {
+.win-modal { 
     background-color: rgba(60, 204, 251, 0.91);
     margin: 8% auto;
     padding: 20px;
