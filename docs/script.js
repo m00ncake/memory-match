@@ -6,6 +6,7 @@ var first_card_back = null;
 var second_card = null;
 var second_card_front = null;
 var second_card_back = null;
+var winAnimation = "animated zoomInUp";
 var suggestAnimation = "animated shake";
 var cardClickAnimation = "animated pulse";
 var onAnimationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
@@ -127,7 +128,7 @@ function flip_card() {
 }
 
 function alert_win() {
-    $(".win-modal-bg").toggle();
+    $(".win-modal-bg").addClass(winAnimation).toggle();
     $(".close-win-modal").click(function(){
         $(".win-modal-bg").hide();
         reset_button_clicked();
@@ -176,7 +177,7 @@ function card_clicked() {
             second_card_back = null;
 
             if (match_counter === total_possible_matches) {
-                setTimeout(alert_win, 500);
+                setTimeout(alert_win, 0);
             }
 
         } else {
@@ -189,7 +190,6 @@ function card_clicked() {
 }
 
 $(document).ready(function() {
-    // $(".win-modal-bg").hide();
     build_cards();
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
