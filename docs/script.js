@@ -11,6 +11,7 @@ var suggestAnimation = "animated shake";
 var cardClickAnimation = "animated pulse";
 var onAnimationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 var winAudio = new Audio("audio/ttg_theme_song.mp3");
+var clickAudio = new Audio("audio/ttg_crack.mp3");
 var matched_cards = [];
 var total_possible_matches = 9;
 var match_counter = 0;
@@ -129,18 +130,17 @@ function flip_card() {
 }
 
 function alert_win() {
-    winAudio.play();    
-    setTimeout(function(){
-        $(".win-modal-bg").addClass(winAnimation).toggle();
-        $(".close-win-modal").click(function(){
-            $(".win-modal-bg").hide();
-            reset_button_clicked();
-        });
-    }, 1000);
+    winAudio.play();
+    $(".win-modal-bg").addClass(winAnimation).toggle();
+    $(".close-win-modal").click(function(){
+        $(".win-modal-bg").hide();
+        reset_button_clicked();
+    });
 }
 
 
 function card_clicked() {
+    clickAudio.play();
     $(".card").removeClass("animated flipInY");
     $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
         $(this).removeClass(cardClickAnimation);
@@ -181,7 +181,7 @@ function card_clicked() {
             second_card_back = null;
 
             if (match_counter === total_possible_matches) {
-                setTimeout(alert_win, 100);
+                setTimeout(alert_win, 800);
             }
 
         } else {
