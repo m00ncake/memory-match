@@ -41,32 +41,40 @@ body {
     background-image: url(images/match.png);
 } */
 
-.game-title, .settings, .about {
+.game-title, .mute, .about {
     position: absolute;
     font-family: 'Titillium Web', Arial, sans-serif;
     text-transform: uppercase;
     /* color: #3cccfb; */
-    color: #fcf74c;
+    color: #3cccfb;
 }
 .game-title {
-    left: 22vw;
-    top: 0.2vw;
-    font-size: 6vw;
+    left: 23vw;
+    top: 0.1vw;
+    font-size: 6.4vw;
     text-align: center;
     letter-spacing: 4px;
     width: 60%;
     font-weight: 900;
     text-shadow: 8px 7px #dc421d;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: #dc421d;
+    -webkit-text-stroke-color: #fcf74c;
 }
 .game-title span {
-    color: #fff14a;
+    /* color: #fcf74c; */
+    color: #3cccfb;
 }
-.settings {
-    right: 7vw;
-    top: 8vh;
-    font-size: 1vw;
+.mute {
+    right: 11vw;
+    top: 3vw;
+    font-size: 2.5vw;
+}
+
+.volume-off {
+    color: #624bc9;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+
 }
 .about {
     right: 7vw;

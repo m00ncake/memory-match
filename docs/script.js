@@ -70,6 +70,13 @@ function build_cards(){
 
 }
 
+function toggleAudio() {
+    console.log("sound muted");
+    $(".mute a span").toggleClass("glyphicon-volume-up glyphicon-volume-off");
+    clickAudio.muted = !clickAudio.muted;
+    winAudio.muted = !winAudio.muted;
+}
+
 function make_unavailable(clickedCard) {
     matched_cards.push(clickedCard);
     if(matched_cards !== []) {
@@ -195,6 +202,7 @@ function card_clicked() {
 
 $(document).ready(function() {
     build_cards();
+    $(".mute a").click(toggleAudio);
     $(".card").click(card_clicked);
     $("button.reset").click(reset_button_clicked);
 });
