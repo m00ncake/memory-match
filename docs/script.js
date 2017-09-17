@@ -11,7 +11,11 @@ var suggestAnimation = "animated shake";
 var cardClickAnimation = "animated pulse";
 var onAnimationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
 var winAudio = new Audio("audio/ttg_theme_song.mp3");
-var clickAudio = new Audio("audio/ttg_crack.mp3");
+var clickAudio1 = new Audio("audio/ttg_crack.mp3");
+var clickAudio2 = new Audio("audio/ttg_wack.mp3");
+var clickAudio3 = new Audio("audio/ttg_smack.mp3");
+var clickAudioArr = [clickAudio1, clickAudio2, clickAudio3];
+var matchAudio = new Audio("audio/ttg_booyah.mp3");
 var matched_cards = [];
 var total_possible_matches = 9;
 var match_counter = 0;
@@ -40,6 +44,15 @@ var cardFrontArr = [
     "front_cyborg.png",
     "front_beastboy.png"
     ];
+
+function randomizedClickSound() {
+    var tempSoundArr = clickAudioArr.slice();
+    var randomOrder = Math.floor(Math.random() * tempSoundArr.length);
+    var selectSound = tempSoundArr[randomOrder];
+    console.log(selectSound);
+    return selectSound;
+
+}
 
 function build_cards(){
     var tempCardFrontArr = cardFrontArr.slice();
@@ -72,9 +85,15 @@ function build_cards(){
 
 function toggleAudio() {
     console.log("sound muted");
+    console.log("click audi0:", clickAudio2.muted);    
     $(".mute a span").toggleClass("glyphicon-volume-up glyphicon-volume-off");
-    clickAudio.muted = !clickAudio.muted;
+    clickAudio2.muted = !clickAudio2.muted;
+    console.log('click audio:', clickAudio2.muted);
+    matchAudio.muted = !matchAudio.muted;
+    console.log('match audio:', matchAudio.muted);
     winAudio.muted = !winAudio.muted;
+    console.log('win audio:', winAudio.muted);
+    
 }
 
 function make_unavailable(clickedCard) {
@@ -147,7 +166,8 @@ function alert_win() {
 
 
 function card_clicked() {
-    clickAudio.play();
+    // randomizedClickSound().muted = false;
+    // clickAudio2.muted = false;    
     $(".card").removeClass("animated flipInY");
     $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
         $(this).removeClass(cardClickAnimation);
@@ -179,6 +199,8 @@ function card_clicked() {
         if (first_card_front[0] === second_card_front[0]) {
             setTimeout(flip_card, 1000);
         } else if (first_card_front.find("img").attr("src") === second_card_front.find("img").attr("src")) {
+            clickAudio2.volume = 0.1;
+            matchAudio.play();
             incrementCounter();
             make_unavailable(first_card);
             make_unavailable(second_card);
@@ -186,6 +208,9 @@ function card_clicked() {
             first_card_back = null;
             second_card_front = null;
             second_card_back = null;
+            setTimeout(function(){
+                clickAudio2.volume = 1;
+            }, 200);
 
             if (match_counter === total_possible_matches) {
                 setTimeout(alert_win, 800);
@@ -198,6 +223,10 @@ function card_clicked() {
         }
         accuracyCounter();
     }
+    clickAudio2.play();
+    // setTimeout(function(){
+    //     clickAudio2.muted = false;
+    // }, 200);
 }
 
 $(document).ready(function() {
