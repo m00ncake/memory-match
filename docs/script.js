@@ -10,11 +10,18 @@ var winAnimation = "animated zoomInUp";
 var suggestAnimation = "animated shake";
 var cardClickAnimation = "animated pulse";
 var onAnimationEnd = "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";
-var winAudio = new Audio("audio/ttg_theme_song.mp3");
+var soundToggle = new Audio("audio/ttg_bloop-off.mp3");
+var winAudio = new Audio("audio/ttg_theme.mp3");
 var clickAudio1 = new Audio("audio/ttg_crack.mp3");
 var clickAudio2 = new Audio("audio/ttg_wack.mp3");
 var clickAudio3 = new Audio("audio/ttg_smack.mp3");
-var clickAudioArr = [clickAudio1, clickAudio2, clickAudio3];
+var clickAudio4 = new Audio("audio/ttg_crack-a-lika-smack-smack.mp3");
+var clickAudioArr = [
+    clickAudio1, clickAudio1, clickAudio1, clickAudio1,
+    clickAudio2, clickAudio2, clickAudio2, clickAudio2,
+    clickAudio3, clickAudio3, clickAudio3, clickAudio3,
+    clickAudio4
+    ];
 var matchAudio = new Audio("audio/ttg_booyah.mp3");
 var matched_cards = [];
 var total_possible_matches = 9;
@@ -45,7 +52,7 @@ var cardFrontArr = [
     "front_beastboy.png"
     ];
 
-function randomizedClickSound() {
+function randomizedClickAudio() {
     var tempSoundArr = clickAudioArr.slice();
     var randomOrder = Math.floor(Math.random() * tempSoundArr.length);
     var selectSound = tempSoundArr[randomOrder];
@@ -71,7 +78,6 @@ function build_cards(){
         var $frontimg = $("<img>", {
             src: "images/" + takeElement[0]
         }); 
-        console.log(($frontimg).attr("src"));
         var $backimg = $("<img>", {
             src: "images/card_background.png"
         });
@@ -86,13 +92,39 @@ function build_cards(){
 function toggleAudio() {
     console.log("sound muted");
     console.log("click audi0:", clickAudio2.muted);    
-    $(".mute a span").toggleClass("glyphicon-volume-up glyphicon-volume-off");
+    $(".mute a span")
+        .toggleClass("glyphicon-volume-up glyphicon-volume-off")
+        .removeClass("bounce")
+        .addClass("rubberBand")
+        .one(onAnimationEnd, function(){
+            $(".mute a span").removeClass("rubberBand");
+        });
+    soundToggle.play();    
+    clickAudio1.muted = !clickAudio1.muted;
     clickAudio2.muted = !clickAudio2.muted;
-    console.log('click audio:', clickAudio2.muted);
+    clickAudio3.muted = !clickAudio3.muted;
+    clickAudio4.muted = !clickAudio4.muted;
+    console.log('click audio:', clickAudio1.muted, clickAudio2.muted, clickAudio3.muted);
     matchAudio.muted = !matchAudio.muted;
     console.log('match audio:', matchAudio.muted);
     winAudio.muted = !winAudio.muted;
     console.log('win audio:', winAudio.muted);
+    
+}
+
+function volumeUp() {
+    clickAudio1.volume = 1;
+    clickAudio2.volume = 1;
+    clickAudio3.volume = 1;
+    clickAudio4.volume = 1;
+    
+}
+
+function volumeDown() {
+    clickAudio1.volume = 0.1;
+    clickAudio2.volume = 0.1;
+    clickAudio3.volume = 0.1;   
+    clickAudio4.volume = 0.1;   
     
 }
 
@@ -166,8 +198,8 @@ function alert_win() {
 
 
 function card_clicked() {
-    // randomizedClickSound().muted = false;
-    // clickAudio2.muted = false;    
+    // clickAudio2.volume = 1;
+    volumeUp();
     $(".card").removeClass("animated flipInY");
     $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
         $(this).removeClass(cardClickAnimation);
@@ -199,7 +231,8 @@ function card_clicked() {
         if (first_card_front[0] === second_card_front[0]) {
             setTimeout(flip_card, 1000);
         } else if (first_card_front.find("img").attr("src") === second_card_front.find("img").attr("src")) {
-            clickAudio2.volume = 0.1;
+            // clickAudio2.volume = 0.1;
+            volumeDown();
             matchAudio.play();
             incrementCounter();
             make_unavailable(first_card);
@@ -208,9 +241,9 @@ function card_clicked() {
             first_card_back = null;
             second_card_front = null;
             second_card_back = null;
-            setTimeout(function(){
-                clickAudio2.volume = 1;
-            }, 200);
+            // setTimeout(function(){
+            //     clickAudio2.volume = 1;
+            // }, 200);
 
             if (match_counter === total_possible_matches) {
                 setTimeout(alert_win, 800);
@@ -223,10 +256,9 @@ function card_clicked() {
         }
         accuracyCounter();
     }
-    clickAudio2.play();
-    // setTimeout(function(){
-    //     clickAudio2.muted = false;
-    // }, 200);
+    randomizedClickAudio().play();
+    // clickAudio2.play();
+
 }
 
 $(document).ready(function() {
