@@ -53,6 +53,7 @@ var cardFrontArr = [
     ];
 
 function randomizedClickAudio() {
+    //randomizes the sound when the cards are clicked
     var tempSoundArr = clickAudioArr.slice();
     var randomOrder = Math.floor(Math.random() * tempSoundArr.length);
     var selectSound = tempSoundArr[randomOrder];
@@ -62,6 +63,7 @@ function randomizedClickAudio() {
 }
 
 function build_cards(){
+    //builds out the 18 cards for the game board
     var tempCardFrontArr = cardFrontArr.slice();
     while(tempCardFrontArr.length > 0){
         var randomOrder = Math.floor(Math.random() * tempCardFrontArr.length);
@@ -90,6 +92,7 @@ function build_cards(){
 }
 
 function toggleAudio() {
+    //toggles the audio on/off when the volume logo is clicked
     console.log("sound muted");
     console.log("click audi0:", clickAudio2.muted);    
     $(".mute a span")
@@ -113,6 +116,7 @@ function toggleAudio() {
 }
 
 function volumeUp() {
+    //turns volume up to full 
     clickAudio1.volume = 1;
     clickAudio2.volume = 1;
     clickAudio3.volume = 1;
@@ -121,6 +125,7 @@ function volumeUp() {
 }
 
 function volumeDown() {
+    //turns volume down to a minimum
     clickAudio1.volume = 0.1;
     clickAudio2.volume = 0.1;
     clickAudio3.volume = 0.1;   
@@ -129,6 +134,7 @@ function volumeDown() {
 }
 
 function make_unavailable(clickedCard) {
+    //makes a clicked card unavailable so it cannot be clicked again
     matched_cards.push(clickedCard);
     if(matched_cards !== []) {
         clickedCard.off("click");
@@ -136,20 +142,24 @@ function make_unavailable(clickedCard) {
 }
 
 function attemptCounter() {
+    //increases the counter for the number of times the player have attempted to make a match
     attempt_counter++;
     $(".attempts").find(".value").text(attempt_counter);
 }
 
 function incrementCounter() {
+    //increases the counter for the number of matches the player have made
     match_counter++;
 }
 
 function accuracyCounter() {
+    //calculates the player accuracy in percentage
     accuracy = Math.round((match_counter/attempt_counter)*100);
     $(".accuracy").find(".value").text(accuracy + "%");
 }
 
 function reset_stats () {
+    //resets all of the stats on the left diplay
     match_counter = 0;
     attempt_counter = 0;
     $(".attempts").find(".value").text(attempt_counter);
@@ -158,6 +168,7 @@ function reset_stats () {
 }
 
 function remove_game_area() {
+    //removes all the cards from the game area so a new set can populate
     $("#game-area").empty();
 }
 
@@ -180,6 +191,7 @@ function reset_button_clicked() {
 }
 
 function flip_card() {
+    //flips both cards over when no match has been made
     first_card_back.show();
     second_card_back.show();
     first_card_front = null;
@@ -188,6 +200,7 @@ function flip_card() {
 }
 
 function alert_win() {
+    //alerts the player when all matches have been made
     winAudio.play();
     $(".win-modal-bg").addClass(winAnimation).toggle();
     $(".close-win-modal").click(function(){
@@ -198,15 +211,17 @@ function alert_win() {
 
 
 function card_clicked() {
-    // clickAudio2.volume = 1;
+    //runs everytime a card is clicked
     volumeUp();
     $(".card").removeClass("animated flipInY");
     $(this).addClass(cardClickAnimation).one(onAnimationEnd, function(){
         $(this).removeClass(cardClickAnimation);
     });
+
     if (canIClick === false) {
         return;
     }
+
     if (this == previousClick) {
         $(".suggest").addClass(suggestAnimation).one(onAnimationEnd, function(){
             $(".suggest").removeClass(suggestAnimation);
@@ -214,12 +229,14 @@ function card_clicked() {
         return;
     }
     $(this).find(".back").hide();
+
     if (first_card_front === null) {
         previousClick = this;
         first_card = $(this);
         first_card_back = $(this).find(".back");
         first_card_front = $(this).find(".front");
         first_card.addClass("clicked");
+
     } else {
         second_card = $(this);
         second_card_back = $(this).find(".back");
@@ -228,10 +245,11 @@ function card_clicked() {
         $(".suggest").hide();
         previousClick = null;
         attemptCounter();
+
         if (first_card_front[0] === second_card_front[0]) {
             setTimeout(flip_card, 1000);
+
         } else if (first_card_front.find("img").attr("src") === second_card_front.find("img").attr("src")) {
-            // clickAudio2.volume = 0.1;
             volumeDown();
             matchAudio.play();
             incrementCounter();
@@ -241,12 +259,9 @@ function card_clicked() {
             first_card_back = null;
             second_card_front = null;
             second_card_back = null;
-            // setTimeout(function(){
-            //     clickAudio2.volume = 1;
-            // }, 200);
 
             if (match_counter === total_possible_matches) {
-                setTimeout(alert_win, 800);
+                setTimeout(alert_win, 500);
             }
 
         } else {
@@ -257,7 +272,6 @@ function card_clicked() {
         accuracyCounter();
     }
     randomizedClickAudio().play();
-    // clickAudio2.play();
 
 }
 

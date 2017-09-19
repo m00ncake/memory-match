@@ -28,18 +28,6 @@ body {
     right: 3vw;
     background-image: url(images/header_raven.png);
 }
-/* .header-memory-title {
-    top: 0.7vw;
-    width: 25vw;
-    left: 29vw;
-    background-image: url(images/memory.png);
-}
-.header-match-title {
-    top: 0.3vw;
-    width: 21vw;
-    right: 22vw;
-    background-image: url(images/match.png);
-} */
 
 .game-title, .mute, .about {
     position: absolute;
@@ -115,8 +103,6 @@ body {
 .suggest {
     display: none;
     color: #ee3e2b;
-    /* -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black; */
     -webkit-animation-duration: 0.4s;
 }
 .reset {
