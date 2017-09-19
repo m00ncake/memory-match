@@ -121,7 +121,7 @@ body {
 }
 .reset {
     position: absolute;
-    background-color: #83cd3a;
+    background-color: #15bf37;
     border: 2px solid black;
     bottom: 10%;
     width: 79%;
@@ -129,6 +129,7 @@ body {
     left: 10%;
     padding: 1vw 1vw;
     font-size: 2vmin;
+
 }
 .game-container {
     float: left;
@@ -216,20 +217,20 @@ body {
         height: 8vw;
         background-size: 21%;
     }
-    .settings {
-        right: 6vw;
-        top: 6vw;
-        font-size: 1vw;
+
+    .game-title {
+        top: -0.2vw;
     }
-    .about {
-        right: 6vw;
-        top: 3vw;
-        font-size: 1vw;
-    }
+
     .stats-container {
         width: 15vw;
-        height: 45vw;
+        height: 40vw;
     }
+
+    .stats-container div {
+        font-size: 3vmin;
+    }
+
     .reset {
         padding: 0.5vw 0.5vw;
     }
@@ -246,10 +247,8 @@ body {
     .back img, .front img {
         height: 13vw;
         width: 9vw;
-        left: 0.7vh;
-        right: 0.5vh;
-        top: 0.5vh;
-        bottom: 0.5vh;
+        top: 0.5vw;
+        left: 0.5vw;
     }
 }
 
@@ -258,14 +257,7 @@ body {
         height: 8vw;
         background-size: 22%;
     }
-    .settings {
-        top: 5vw;
-        font-size: 1vw;
-    }
-    .about {
-        top: 2vw;
-        font-size: 1vw;
-    }
+    
     .stats-container {
         width: 14vw;
         height: 37vw;
@@ -302,16 +294,7 @@ body {
     .raven {
         top: 1.3vw;
     }
-    .settings {
-        right: 5vw;
-        top: 4.5vw;
-        font-size: 1.2vw;
-    }
-    .about {
-        right: 5vw;
-        top: 2.5vw;
-        font-size: 1.2vw;
-    }
+
     .stats-container {
         width: 12vw;
     }
