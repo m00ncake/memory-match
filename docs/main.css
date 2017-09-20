@@ -214,7 +214,8 @@ body {
     }
 
     .stats-container div {
-        font-size: 3vmin;
+        font-size: 2.7vmin;
+        margin-bottom: 0.5vw;
     }
 
     .reset {
@@ -330,7 +331,7 @@ body {
         font-size: 1vw;
     }
     .stats-container div {
-        font-size: 1.75vmin;
+        font-size: 1.50vmin;
     }
     .game-title {
         top: 1vw;
@@ -339,7 +340,7 @@ body {
         -webkit-text-stroke-width: 2px;
     }
     .reset {
-        font-size: 1.4vmin;
+        font-size: 1.2vmin;
         bottom: 2vw;
         width: 83%;
         left: 8%;
@@ -487,7 +488,6 @@ and (orientation: landscape) {
 }
 
 
-
 @media screen and (max-width: 736px) {
     body {
         font-size: 16px;
@@ -517,7 +517,7 @@ and (orientation: landscape) {
         font-size: 1.2vw;
     }
     .stats-container div{
-        font-size: 1.5vmin;
+        font-size: 1.4vmin;
     }
     .reset {
         font-size: 1.3vmin;
@@ -542,6 +542,19 @@ and (orientation: landscape) {
     }
 }
 
+@media only screen
+and (min-device-width: 568px)
+and (max-device-width: 736px)
+and (orientation: landscape) {
+    .stats-container div {
+        font-size: 2.4vmin;
+    }
+    .reset {
+        font-size: 2.3vmin;
+    }
+
+}
+
 @media (max-width: 480px) {
     body {
         background-size: cover;
@@ -550,24 +563,16 @@ and (orientation: landscape) {
         height: 3em;
         background-size: 25%;
     }
-    .settings {
-        top: 5.5vw;
-        font-size: 1.5vw;
-    }
-    .about {
-        top: 1.8vw;
-        font-size: 1.5vw;
-    }
 
     .stats-container {
         width: 20vw;
         height: 70vw;
     }
     .stats-container div {
-        font-size: 2.5vmin;
+        font-size: 2.2vmin;
     }
     .reset {
-        font-size: 2.5vmin;
+        font-size: 2.2vmin;
     }
     .game-container {
         height: 94vh;
