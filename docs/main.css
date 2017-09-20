@@ -198,7 +198,7 @@ body {
 
 /************** Media Query *************/
 
-@media screen and (max-width: 1680px) {
+@media screen and (max-width: 1950px) {
     .header-container {
         height: 8vw;
         background-size: 21%;
@@ -214,7 +214,7 @@ body {
     }
 
     .stats-container div {
-        font-size: 2.7vmin;
+        font-size: 2.5vmin;
         margin-bottom: 0.5vw;
     }
 
@@ -239,6 +239,14 @@ body {
     }
 }
 
+@media screen and (max-width: 1680px) {
+    .stats-container div {
+        font-size: 2.3vmin;
+        margin-bottom: 0.5vw;
+    }
+
+}    
+
 @media screen and (max-width: 1280px) {
     .header-container {
         height: 8vw;
@@ -252,10 +260,10 @@ body {
         font-wight: 400;
     }
     .stats-container div {
-        font-size: 2.4vmin;
+        font-size: 2vmin;
     }
     .reset {
-        font-size: 2vmin;
+        font-size: 1.5vmin;
     }
     .game-container {
         margin: 1vw 3vw;
@@ -286,10 +294,10 @@ body {
         width: 12vw;
     }
     .stats-container div {
-        font-size: 2vmin;
+        font-size: 1.6vmin;
     }
     .reset {
-        font-size: 1.6vmin;
+        font-size: 1.3vmin;
     }
     .game-container {
         margin: 1vw 3vw;
