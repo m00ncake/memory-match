@@ -525,7 +525,8 @@ and (orientation: landscape) {
         font-size: 1.2vw;
     }
     .stats-container div{
-        font-size: 1.4vmin;
+        font-size: 1.3vw;
+        /* font-size: 1.4vmin; */
     }
     .reset {
         font-size: 1.3vmin;
